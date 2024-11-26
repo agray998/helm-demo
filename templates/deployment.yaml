@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helm-demo
+  name: {{ .Release.name }}
 spec:
   strategy:
     type: RollingUpdate
@@ -15,7 +15,7 @@ spec:
         app: colour-translator
     spec:
       containers:
-      - image: agray998/helm-demo-app:v1
+      - image: agray998/helm-demo-app:{{ .Values.version }}
         imagePullPolicy: Always
         name: colour-translator
         env:
