@@ -8,11 +8,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: colour-translator
+      app: {{ .Release.Name }}.colour-translator.app
   template:
     metadata:
       labels:
-        app: colour-translator
+        app: {{ .Release.Name }}.colour-translator.app
     spec:
       containers:
       - image: agray998/helm-demo-app:{{ .Values.version }}
