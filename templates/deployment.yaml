@@ -15,7 +15,7 @@ spec:
         app: {{ .Release.Name }}.colour-translator.app
     spec:
       containers:
-      - image: agray998/helm-demo-app:{{ .Values.version }}
+      - image: {{ printf "agray998/helm-demo-app:v%s" .Chart.AppVersion }}
         imagePullPolicy: Always
         name: colour-translator
         env:
