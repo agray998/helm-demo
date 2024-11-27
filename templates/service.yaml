@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-app-service
 spec:
   selector:
-    app: colour-translator
+    app: {{ .Release.Name }}.colour-translator.app
   type: NodePort
   ports:
   - port: {{ .Values.port }}
