@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: {{ .Release.Name }}.colour-translator.app
-  type: NodePort
+  type: {{ .Values.serviceType }}
   ports:
   - port: {{ .Values.port }}
     protocol: TCP
